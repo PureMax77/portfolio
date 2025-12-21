@@ -108,7 +108,7 @@ export default function Hero() {
               <ArrowDown className="h-5 w-5" />
             </button>
             <a
-              href="/resume.pdf"
+              href="/resume_jsh.pdf"
               download
               className="w-full sm:w-auto px-8 py-3 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
             >
