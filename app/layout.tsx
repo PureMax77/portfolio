@@ -7,19 +7,21 @@ import Header from '@/components/Header'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Portfolio | Senior Frontend Developer',
-  description: '6년차 프론트엔드 개발자의 포트폴리오입니다. React, Next.js, TypeScript를 주로 사용합니다.',
-  keywords: ['Frontend Developer', 'React', 'Next.js', 'TypeScript', 'Portfolio'],
-  authors: [{ name: 'Senior Frontend Developer' }],
+  title: '정상헌 | Front-end Developer',
+  description: 'React, TypeScript 기반의 6년차 웹 프론트엔드 개발자입니다. 블록체인 및 AI 도메인의 다양한 서비스를 개발했으며, 도메인에 대한 깊은 이해를 바탕으로 완성도 높은 개발을 추구합니다.',
+  keywords: ['정상헌', 'Sanghun Jeong', 'Frontend Developer', 'React', 'Next.js', 'TypeScript', 'Web3', 'Blockchain', 'DeFi', 'Portfolio'],
+  authors: [{ name: '정상헌 (Sanghun Jeong)', url: 'https://github.com/puremax77' }],
   openGraph: {
-    title: 'Portfolio | Senior Frontend Developer',
-    description: '6년차 프론트엔드 개발자의 포트폴리오',
+    title: '정상헌 | Front-end Developer',
+    description: 'React, TypeScript 기반의 6년차 웹 프론트엔드 개발자 포트폴리오',
     type: 'website',
+    locale: 'ko_KR',
+    url: 'https://puremax77.tistory.com',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Portfolio | Senior Frontend Developer',
-    description: '6년차 프론트엔드 개발자의 포트폴리오',
+    title: '정상헌 | Front-end Developer',
+    description: 'React, TypeScript 기반의 6년차 웹 프론트엔드 개발자 포트폴리오',
   },
 }
 

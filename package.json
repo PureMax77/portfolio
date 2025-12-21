@@ -1,6 +1,8 @@
 {
-    "name": "portfolio",
-    "version": "0.1.0",
+    "name": "sanghun-jeong-portfolio",
+    "version": "1.0.0",
+    "description": "정상헌의 프론트엔드 개발자 포트폴리오",
+    "author": "Sanghun Jeong (puremax77)",
     "private": true,
     "scripts": {
         "dev": "next dev",

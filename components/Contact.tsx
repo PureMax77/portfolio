@@ -1,13 +1,12 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, Github, Linkedin, Send, MapPin, Phone } from 'lucide-react'
+import { Mail, Github, Send, MapPin, Phone, BookOpen } from 'lucide-react'
 import { useState } from 'react'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     subject: '',
     message: '',
   })
@@ -15,10 +14,10 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Here you would typically send the form data to your backend or email service
-    const mailtoLink = `mailto:your.email@example.com?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:ertr777@naver.com?subject=${encodeURIComponent(
       formData.subject
     )}&body=${encodeURIComponent(
-      `이름: ${formData.name}\n이메일: ${formData.email}\n\n${formData.message}`
+      `이름: ${formData.name}\n\n${formData.message}`
     )}`
     window.location.href = mailtoLink
   }
@@ -34,44 +33,44 @@ export default function Contact() {
 
   const contactInfo = [
     {
-      icon: <Mail className="h-6 w-6" />,
-      label: 'Email',
-      value: 'your.email@example.com',
-      href: 'mailto:your.email@example.com',
-    },
-    {
       icon: <Phone className="h-6 w-6" />,
       label: 'Phone',
-      value: '+82 10-1234-5678',
-      href: 'tel:+821012345678',
+      value: '010-6692-2351',
+      href: 'tel:010-6692-2351',
     },
     {
-      icon: <MapPin className="h-6 w-6" />,
-      label: 'Location',
-      value: 'Seoul, South Korea',
-      href: null,
+      icon: <Mail className="h-6 w-6" />,
+      label: 'Email',
+      value: 'ertr777@naver.com',
+      href: 'mailto:ertr777@naver.com',
     },
+    // {
+    //   icon: <BookOpen className="h-6 w-6" />,
+    //   label: 'Blog',
+    //   value: 'puremax77.tistory.com',
+    //   href: 'https://puremax77.tistory.com',
+    // },
   ]
 
   const socialLinks = [
     {
       icon: <Github className="h-6 w-6" />,
       label: 'GitHub',
-      href: 'https://github.com/yourusername',
+      href: 'https://github.com/puremax77',
       color: 'hover:bg-gray-800 dark:hover:bg-gray-700',
     },
     {
-      icon: <Linkedin className="h-6 w-6" />,
-      label: 'LinkedIn',
-      href: 'https://linkedin.com/in/yourusername',
-      color: 'hover:bg-blue-600',
+      icon: <BookOpen className="h-6 w-6" />,
+      label: 'Blog',
+      href: 'https://puremax77.tistory.com',
+      color: 'hover:bg-orange-600',
     },
-    {
-      icon: <Mail className="h-6 w-6" />,
-      label: 'Email',
-      href: 'mailto:your.email@example.com',
-      color: 'hover:bg-red-600',
-    },
+    // {
+    //   icon: <Mail className="h-6 w-6" />,
+    //   label: 'Email',
+    //   href: 'mailto:ertr777@naver.com',
+    //   color: 'hover:bg-red-600',
+    // },
   ]
 
   const containerVariants = {
@@ -113,7 +112,7 @@ export default function Contact() {
             Contact
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            프로젝트 문의나 협업 제안이 있으시다면 언제든 연락주세요
+            궁금한 사항이 있으시다면 언제든 연락주세요 :-)
           </p>
         </motion.div>
 
@@ -211,25 +210,6 @@ export default function Contact() {
                   required
                   className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
                   placeholder="홍길동"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
-                >
-                  이메일
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 dark:focus:ring-primary-500 text-gray-900 dark:text-white"
-                  placeholder="example@email.com"
                 />
               </div>
 

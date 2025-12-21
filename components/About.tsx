@@ -5,46 +5,51 @@ import { Code2, Layout, Server, Wrench, Award, Briefcase } from 'lucide-react'
 
 export default function About() {
   const skills = {
-    Language: ['JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Python'],
-    Frontend: [
+    'Front-end': [
+      'JavaScript',
+      'TypeScript',
       'React',
       'Next.js',
-      'Vue.js',
       'Redux',
-      'Zustand',
-      'React Query',
+      'Jotai',
+      'Styled-Components',
       'Tailwind CSS',
-      'Styled Components',
+      'Ant Design',
+      'Shadcn',
+      'Web3.js',
     ],
-    Backend: ['Node.js', 'Express', 'NestJS', 'GraphQL', 'REST API'],
-    Tools: [
-      'Git',
-      'GitHub Actions',
-      'Docker',
-      'AWS',
-      'Vercel',
-      'Webpack',
-      'Vite',
-      'Jest',
-      'Cypress',
-    ],
+    'Back-end': ['Node.js', 'Apollo Server', 'Prisma'],
+    AI: ['Cursor', 'Python', 'MCP'],
+    etc: ['REST API', 'GraphQL', 'Github', 'Bitbucket', 'Docker'],
   }
 
   const achievements = [
     {
       icon: <Briefcase className="h-6 w-6" />,
-      title: '6년차 경력',
-      description: '스타트업부터 대기업까지 다양한 프로젝트 경험',
+      title: '6년차 프론트엔드 개발자',
+      description: '에듀테크 스타트업에서 블록체인 회사까지 다양한 도메인 경험',
     },
     {
       icon: <Award className="h-6 w-6" />,
-      title: '성능 최적화',
-      description: '초기 로딩 시간 40% 개선, Core Web Vitals 향상',
+      title: '블록체인 & AI 전문성',
+      description: 'DeFi, Web Wallet, Explorer 등 블록체인 서비스 및 AI 프로젝트 개발',
     },
     {
       icon: <Code2 className="h-6 w-6" />,
-      title: '팀 리딩',
-      description: '5인 규모 프론트엔드 팀 리드 및 멘토링 경험',
+      title: '도메인 이해 기반 개발',
+      description: '서비스 도메인에 대한 깊은 이해를 바탕으로 완성도 높은 개발 추구',
+    },
+  ]
+
+  const education = [
+    {
+      school: '국민대학교 자동차공학과',
+      period: '2010 - 2017',
+    },
+    {
+      school: '국민대 자동차공학 전문대학원',
+      major: '친인간지능형자동차',
+      period: '2017 - 2019',
     },
   ]
 
@@ -120,6 +125,40 @@ export default function About() {
           ))}
         </motion.div>
 
+        {/* Education */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            Education
+          </h3>
+          <div className="space-y-4">
+            {education.map((edu, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md"
+              >
+                <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-1">
+                  {edu.school}
+                </h4>
+                {edu.major && (
+                  <p className="text-gray-600 dark:text-gray-400 mb-2">
+                    {edu.major}
+                  </p>
+                )}
+                <p className="text-sm text-gray-500 dark:text-gray-500">
+                  {edu.period}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
         {/* Skills */}
         <motion.div
           variants={containerVariants}
@@ -128,19 +167,22 @@ export default function About() {
           viewport={{ once: true }}
           className="space-y-8"
         >
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            Skills
+          </h3>
           {Object.entries(skills).map(([category, items]) => (
             <motion.div key={category} variants={itemVariants}>
               <div className="flex items-center gap-3 mb-4">
-                {category === 'Language' && (
-                  <Code2 className="h-6 w-6 text-primary-600 dark:text-primary-400" />
-                )}
-                {category === 'Frontend' && (
+                {category === 'Front-end' && (
                   <Layout className="h-6 w-6 text-primary-600 dark:text-primary-400" />
                 )}
-                {category === 'Backend' && (
+                {category === 'Back-end' && (
                   <Server className="h-6 w-6 text-primary-600 dark:text-primary-400" />
                 )}
-                {category === 'Tools' && (
+                {category === 'AI' && (
+                  <Code2 className="h-6 w-6 text-primary-600 dark:text-primary-400" />
+                )}
+                {category === 'etc' && (
                   <Wrench className="h-6 w-6 text-primary-600 dark:text-primary-400" />
                 )}
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white">

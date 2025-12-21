@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'Portfolio | Senior Frontend Developer'
+export const alt = '정상헌 | Front-end Developer'
 export const size = {
   width: 1200,
   height: 630,
@@ -25,9 +25,9 @@ export default async function Image() {
         }}
       >
         <div style={{ fontSize: 80, fontWeight: 'bold', marginBottom: 20 }}>
-          Portfolio
+          정상헌
         </div>
-        <div style={{ fontSize: 40 }}>Senior Frontend Developer</div>
+        <div style={{ fontSize: 40 }}>Front-end Developer</div>
         <div
           style={{
             fontSize: 28,
@@ -38,9 +38,9 @@ export default async function Image() {
         >
           <span>React</span>
           <span>•</span>
-          <span>Next.js</span>
-          <span>•</span>
           <span>TypeScript</span>
+          <span>•</span>
+          <span>Web3</span>
         </div>
       </div>
     ),

@@ -18,13 +18,23 @@ export default function Projects() {
   // Get unique roles for filtering
   const roles = ['전체', '리더', '메인', '보조']
 
-  // Filter projects based on selected filters
-  const filteredProjects = projects.filter((project) => {
-    const technologyMatch =
-      selectedFilter === '전체' || project.technologies.includes(selectedFilter)
-    const roleMatch = selectedRole === '전체' || project.role === selectedRole
-    return technologyMatch && roleMatch
-  })
+  // Filter and sort projects based on selected filters (oldest first)
+  const filteredProjects = projects
+    .filter((project) => {
+      const technologyMatch =
+        selectedFilter === '전체' || project.technologies.includes(selectedFilter)
+      const roleMatch = selectedRole === '전체' || project.role === selectedRole
+      return technologyMatch && roleMatch
+    })
+    .sort((a, b) => {
+      // Extract start year from period (e.g., "2020.02 - 2021.07" -> 2020.02)
+      const getStartDate = (period: string) => {
+        const startPeriod = period.split(' - ')[0]
+        const [year, month] = startPeriod.split('.').map(Number)
+        return year * 100 + month // Convert to comparable number (e.g., 202002)
+      }
+      return getStartDate(a.period) - getStartDate(b.period)
+    })
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -100,11 +110,10 @@ export default function Projects() {
                 <button
                   key={role}
                   onClick={() => setSelectedRole(role)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all ${
-                    selectedRole === role
-                      ? 'bg-primary-600 text-white shadow-lg'
-                      : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'
-                  }`}
+                  className={`px-4 py-2 rounded-lg font-medium transition-all ${selectedRole === role
+                    ? 'bg-primary-600 text-white shadow-lg'
+                    : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'
+                    }`}
                 >
                   {role}
                 </button>
@@ -120,11 +129,10 @@ export default function Projects() {
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => setSelectedFilter('전체')}
-                className={`px-4 py-2 rounded-lg font-medium transition-all ${
-                  selectedFilter === '전체'
-                    ? 'bg-primary-600 text-white shadow-lg'
-                    : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'
-                }`}
+                className={`px-4 py-2 rounded-lg font-medium transition-all ${selectedFilter === '전체'
+                  ? 'bg-primary-600 text-white shadow-lg'
+                  : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'
+                  }`}
               >
                 전체
               </button>
@@ -132,11 +140,10 @@ export default function Projects() {
                 <button
                   key={tech}
                   onClick={() => setSelectedFilter(tech)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all ${
-                    selectedFilter === tech
-                      ? 'bg-primary-600 text-white shadow-lg'
-                      : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'
-                  }`}
+                  className={`px-4 py-2 rounded-lg font-medium transition-all ${selectedFilter === tech
+                    ? 'bg-primary-600 text-white shadow-lg'
+                    : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'
+                    }`}
                 >
                   {tech}
                 </button>
@@ -149,8 +156,8 @@ export default function Projects() {
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          animate="visible"
+          key={`${selectedFilter}-${selectedRole}`}
           className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8"
         >
           {filteredProjects.map((project) => (

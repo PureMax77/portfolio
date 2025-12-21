@@ -2,9 +2,9 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Portfolio | Senior Frontend Developer',
-    short_name: 'Portfolio',
-    description: '6년차 프론트엔드 개발자의 포트폴리오',
+    name: '정상헌 | Front-end Developer Portfolio',
+    short_name: '정상헌 Portfolio',
+    description: 'React, TypeScript 기반의 6년차 웹 프론트엔드 개발자 정상헌의 포트폴리오',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',

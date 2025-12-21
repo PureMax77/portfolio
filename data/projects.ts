@@ -3,66 +3,70 @@ import { Project } from '@/types/project'
 export const projects: Project[] = [
   {
     id: 1,
-    title: '글로벌 이커머스 플랫폼',
-    period: '2023.01 - 2024.12',
+    title: 'WemixFi - DeFi 블록체인 서비스',
+    period: '2022.03 - 2025.12',
     description:
-      '대규모 이커머스 플랫폼의 프론트엔드 아키텍처를 설계하고 구현했습니다. 마이크로 프론트엔드 아키텍처를 도입하여 팀 간 독립적인 개발 환경을 구축했습니다.',
-    technologies: ['Next.js', 'TypeScript', 'React Query', 'Tailwind CSS', 'AWS'],
-    role: '리더',
-    githubUrl: 'https://github.com/yourusername/ecommerce',
-    liveUrl: 'https://ecommerce-demo.vercel.app',
+      'WEMIX 메인넷 기반의 디파이 서비스인 WemixFi의 Front-end를 개발했습니다. 은행처럼 자산을 관리하는 서비스이기 때문에 오류를 최소화하는 것이 가장 중요하다고 판단했으며, 디파이 로직이 정확히 어떻게 작동하는지 이해하려 노력했습니다.',
+    technologies: ['TypeScript', 'Next.js', 'Jotai', 'SCSS', 'Ant Design', 'Web3.js'],
+    role: '메인',
+    liveUrl: 'https://wemixfi.com',
     achievement:
-      '초기 로딩 시간 40% 개선, 월간 활성 사용자 100만 달성',
+      'Swap V2, V3 메인 개발 / Staking, Pool, Lending, Dashboard 서브 개발',
   },
   {
     id: 2,
-    title: 'SaaS 대시보드 플랫폼',
-    period: '2022.06 - 2023.12',
+    title: 'Metadium Explorer - 블록체인 탐색기',
+    period: '2024.06 - 2025.12',
     description:
-      '데이터 시각화와 실시간 분석 기능을 제공하는 SaaS 대시보드를 개발했습니다. 복잡한 데이터를 직관적으로 표현하여 사용자 경험을 극대화했습니다.',
-    technologies: ['React', 'TypeScript', 'Redux', 'D3.js', 'Material-UI'],
+      '블록체인 활동을 간편하게 조회할 수 있는 Explorer 서비스의 Front-end를 개발했습니다. Nuxt 애플리케이션을 Next.js로 마이그레이션하는 작업을 수행했으며, AI 챗봇이 Explorer의 정보를 조회할 수 있도록 MCP Server를 개발했습니다.',
+    technologies: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Shadcn', 'Web3.js', 'Python', 'MCP SDK'],
     role: '메인',
-    githubUrl: 'https://github.com/yourusername/dashboard',
-    liveUrl: 'https://dashboard-demo.vercel.app',
     achievement:
-      '차트 렌더링 성능 60% 향상, 고객 만족도 4.8/5.0',
+      'Nuxt → Next.js 마이그레이션 (Blocks, Transactions, Tokens 페이지) / AI 챗봇 MCP Server 개발',
   },
   {
     id: 3,
-    title: '협업 툴 웹 애플리케이션',
-    period: '2021.09 - 2022.05',
+    title: 'WEMIX Web Wallet - 블록체인 지갑',
+    period: '2023.01 - 2023.12',
     description:
-      '실시간 협업 기능을 제공하는 프로젝트 관리 도구입니다. WebSocket을 활용한 실시간 동기화와 드래그앤드롭 인터페이스를 구현했습니다.',
-    technologies: ['Vue.js', 'Vuex', 'Socket.io', 'Node.js', 'MongoDB'],
+      'WEMIX 테스트넷 전용 Web Wallet 서비스의 Front-end를 주도적으로 개발했습니다. Web3.js를 활용하여 지갑 생성, 잔고 조회, 토큰 전송, Faucet 등 블록체인 Wallet의 핵심 기능을 구현했습니다.',
+    technologies: ['Javascript', 'React', 'Redux', 'SCSS', 'Web3.js'],
     role: '메인',
-    githubUrl: 'https://github.com/yourusername/collaboration-tool',
     achievement:
-      '실시간 동기화 지연시간 100ms 이하 달성, 동시 접속자 5,000명 지원',
+      '지갑 생성, 잔고 조회, 토큰 전송, Faucet 등 핵심 기능 구현',
   },
   {
     id: 4,
-    title: '모바일 뱅킹 앱 (PWA)',
-    period: '2021.03 - 2021.08',
+    title: 'WEB2X - Web3 REST API 서비스',
+    period: '2023.06 - 2024.03',
     description:
-      'Progressive Web App 기술을 활용한 모바일 뱅킹 서비스입니다. 오프라인에서도 작동하는 안정적인 사용자 경험을 제공합니다.',
-    technologies: ['React', 'TypeScript', 'PWA', 'Redux Toolkit', 'Express'],
+      'Web3 라이브러리 없이 REST API만으로 블록체인 기능을 사용할 수 있게 해주는 WEB2X 서비스의 Front-end를 개발했습니다. 주로 로그인, 회원가입, 세션 관리(NextAuth) 파트를 담당했으며, Passkey 연동 기능도 구현했습니다.',
+    technologies: ['TypeScript', 'Next.js', 'Ant Design', 'SCSS', 'NextAuth'],
     role: '보조',
-    githubUrl: 'https://github.com/yourusername/mobile-banking',
     achievement:
-      'Lighthouse 성능 점수 95점 이상, 오프라인 모드 구현',
+      '로그인, 회원가입, 세션 관리 및 Passkey 연동 기능 구현',
   },
   {
     id: 5,
-    title: '소셜 미디어 플랫폼',
-    period: '2020.06 - 2021.02',
+    title: 'ANPR - 자동 번호판 인식 시스템',
+    period: '2024.01 - 2024.06',
     description:
-      '이미지 및 동영상 공유 소셜 미디어 플랫폼의 프론트엔드를 개발했습니다. 무한 스크롤과 이미지 최적화 기술을 적용했습니다.',
-    technologies: ['Next.js', 'TypeScript', 'GraphQL', 'Apollo Client', 'Styled Components'],
+      '톨게이트 시스템 중 차량의 번호판을 자동으로 인식하기 위한 AI 모델 튜닝 환경을 개발했습니다. YOLO를 사용한 AI 모델 파인튜닝과 데이터셋 및 모델 버전 관리를 위한 사내 관리페이지를 개발했습니다.',
+    technologies: ['Python', 'PyTorch', 'OpenCV', 'Docker', 'Next.js', 'Tailwind CSS', 'Shadcn'],
     role: '메인',
-    githubUrl: 'https://github.com/yourusername/social-media',
-    liveUrl: 'https://social-demo.vercel.app',
     achievement:
-      '이미지 로딩 최적화로 데이터 사용량 50% 절감, MAU 50만 달성',
+      'YOLO 기반 AI 모델 파인튜닝 환경 구축 / 데이터셋 & 모델 버전 관리 페이지 개발',
+  },
+  {
+    id: 6,
+    title: '슬로그 - 영상 기반 학습시간 관리',
+    period: '2020.02 - 2021.07',
+    description:
+      '스타트업의 Co-founder 개발자로서 Full-Stack 웹 서비스를 개발했습니다. AI로 학습시간을 판단하는 로직 부분을 제외한 학습시간 기록, 스케줄 관리, 그룹 스터디, 교재 관리 등 서비스의 전반적인 기능을 개발했습니다.',
+    technologies: ['React', 'Styled Components', 'Node.js', 'Apollo Server', 'GraphQL', 'Prisma'],
+    role: '리더',
+    achievement:
+      'Full-Stack 개발: 학습시간 기록, 스케줄 관리, 그룹 스터디, 교재 관리 등',
   },
 ]
 

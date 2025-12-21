@@ -1,18 +1,18 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowDown, Download, Github, Linkedin, Mail } from 'lucide-react'
+import { ArrowDown, Download, Github, Mail, BookOpen, Phone } from 'lucide-react'
 
 export default function Hero() {
   const skills = [
     'React',
-    'Next.js',
     'TypeScript',
-    'Tailwind CSS',
+    'Next.js',
     'Redux',
-    'GraphQL',
+    'Jotai',
+    'Web3.js',
+    'Tailwind CSS',
     'Node.js',
-    'AWS',
   ]
 
   const scrollToProjects = () => {
@@ -47,7 +47,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 text-gray-900 dark:text-white"
           >
-            시니어 프론트엔드 개발자
+            정상헌
           </motion.h1>
 
           {/* Title */}
@@ -57,7 +57,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl md:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 mb-6"
           >
-            Senior Frontend Developer
+            Front-end Developer
           </motion.h2>
 
           {/* Description */}
@@ -67,9 +67,10 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed"
           >
-            6년간 사용자 경험을 최우선으로 생각하며 혁신적인 웹 애플리케이션을
-            개발해왔습니다. 최신 기술을 활용하여 성능과 확장성이 뛰어난 솔루션을
-            제공합니다.
+            React, TypeScript 기반의 6년차 웹 프론트엔드 개발자입니다.
+            <br />
+            블록체인 및 AI 도메인의 다양한 서비스를 개발했으며,
+            도메인에 대한 깊은 이해를 바탕으로 완성도 높은 개발을 추구합니다.
           </motion.p>
 
           {/* Skills */}
@@ -117,14 +118,14 @@ export default function Hero() {
           </motion.div>
 
           {/* Social Links */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
             className="flex items-center justify-center gap-6"
           >
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/puremax77"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors shadow-md hover:shadow-lg"
@@ -133,22 +134,22 @@ export default function Hero() {
               <Github className="h-6 w-6" />
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://puremax77.tistory.com"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors shadow-md hover:shadow-lg"
-              aria-label="LinkedIn"
+              aria-label="Blog"
             >
-              <Linkedin className="h-6 w-6" />
+              <BookOpen className="h-6 w-6" />
             </a>
             <a
-              href="mailto:your.email@example.com"
+              href="tel:010-6692-2351"
               className="p-3 rounded-full bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors shadow-md hover:shadow-lg"
-              aria-label="Email"
+              aria-label="Phone"
             >
-              <Mail className="h-6 w-6" />
+              <Phone className="h-6 w-6" />
             </a>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
 
