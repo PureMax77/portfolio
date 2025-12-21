@@ -47,7 +47,7 @@ export default function Header() {
               onClick={() => scrollToSection('#hero')}
               className="text-xl md:text-2xl font-bold text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
             >
-              JSH's Portfolio
+              JSH&apos;s Portfolio
             </button>
           </div>
 
