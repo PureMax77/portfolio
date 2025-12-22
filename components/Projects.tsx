@@ -1,40 +1,42 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { useState } from 'react'
-import { ExternalLink, Github, Calendar, Award } from 'lucide-react'
-import { projects } from '@/data/projects'
-import { Project } from '@/types/project'
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { ExternalLink, Github, Calendar, Award } from "lucide-react";
+import { projects } from "@/data/projects";
+import { Project } from "@/types/project";
 
 export default function Projects() {
-  const [selectedFilter, setSelectedFilter] = useState<string>('전체')
-  const [selectedRole, setSelectedRole] = useState<string>('전체')
+  const [selectedFilter, setSelectedFilter] = useState<string>("전체");
+  const [selectedRole, setSelectedRole] = useState<string>("전체");
 
   // Get unique technologies for filtering
   const allTechnologies = Array.from(
     new Set(projects.flatMap((project) => project.technologies))
-  )
+  );
 
   // Get unique roles for filtering
-  const roles = ['전체', '리더', '메인', '보조']
+  const roles = ["전체", "리더", "메인", "보조"];
 
   // Filter and sort projects based on selected filters (oldest first)
   const filteredProjects = projects
     .filter((project) => {
       const technologyMatch =
-        selectedFilter === '전체' || project.technologies.includes(selectedFilter)
-      const roleMatch = selectedRole === '전체' || project.role === selectedRole
-      return technologyMatch && roleMatch
+        selectedFilter === "전체" ||
+        project.technologies.includes(selectedFilter);
+      const roleMatch =
+        selectedRole === "전체" || project.role === selectedRole;
+      return technologyMatch && roleMatch;
     })
     .sort((a, b) => {
       // Extract start year from period (e.g., "2020.02 - 2021.07" -> 2020.02)
       const getStartDate = (period: string) => {
-        const startPeriod = period.split(' - ')[0]
-        const [year, month] = startPeriod.split('.').map(Number)
-        return year * 100 + month // Convert to comparable number (e.g., 202002)
-      }
-      return getStartDate(a.period) - getStartDate(b.period)
-    })
+        const startPeriod = period.split(" - ")[0];
+        const [year, month] = startPeriod.split(".").map(Number);
+        return year * 100 + month; // Convert to comparable number (e.g., 202002)
+      };
+      return getStartDate(a.period) - getStartDate(b.period);
+    });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -44,7 +46,7 @@ export default function Projects() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -55,20 +57,20 @@ export default function Projects() {
         duration: 0.5,
       },
     },
-  }
+  };
 
   const getRoleBadgeColor = (role: string) => {
     switch (role) {
-      case '리더':
-        return 'bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300'
-      case '메인':
-        return 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300'
-      case '보조':
-        return 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300'
+      case "리더":
+        return "bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300";
+      case "메인":
+        return "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300";
+      case "보조":
+        return "bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300";
       default:
-        return 'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300'
+        return "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300";
     }
-  }
+  };
 
   return (
     <section
@@ -110,10 +112,11 @@ export default function Projects() {
                 <button
                   key={role}
                   onClick={() => setSelectedRole(role)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all ${selectedRole === role
-                    ? 'bg-primary-600 text-white shadow-lg'
-                    : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'
-                    }`}
+                  className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                    selectedRole === role
+                      ? "bg-primary-600 text-white shadow-lg"
+                      : "bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600"
+                  }`}
                 >
                   {role}
                 </button>
@@ -128,11 +131,12 @@ export default function Projects() {
             </h3>
             <div className="flex flex-wrap gap-2">
               <button
-                onClick={() => setSelectedFilter('전체')}
-                className={`px-4 py-2 rounded-lg font-medium transition-all ${selectedFilter === '전체'
-                  ? 'bg-primary-600 text-white shadow-lg'
-                  : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'
-                  }`}
+                onClick={() => setSelectedFilter("전체")}
+                className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                  selectedFilter === "전체"
+                    ? "bg-primary-600 text-white shadow-lg"
+                    : "bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600"
+                }`}
               >
                 전체
               </button>
@@ -140,10 +144,11 @@ export default function Projects() {
                 <button
                   key={tech}
                   onClick={() => setSelectedFilter(tech)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all ${selectedFilter === tech
-                    ? 'bg-primary-600 text-white shadow-lg'
-                    : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'
-                    }`}
+                  className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                    selectedFilter === tech
+                      ? "bg-primary-600 text-white shadow-lg"
+                      : "bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600"
+                  }`}
                 >
                   {tech}
                 </button>
@@ -232,10 +237,36 @@ export default function Projects() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={(e) => {
+                        if (project.liveComment) {
+                          e.preventDefault();
+                          const confirmed = window.confirm(
+                            `${project.liveComment}\n\n${project.liveUrl}\n\n이동하시겠습니까?`
+                          );
+                          if (confirmed) {
+                            window.open(
+                              project.liveUrl,
+                              "_blank",
+                              "noopener,noreferrer"
+                            );
+                          }
+                        }
+                      }}
                       className="flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
                     >
                       <ExternalLink className="h-4 w-4" />
                       <span className="text-sm font-medium">Live Demo</span>
+                    </a>
+                  )}
+                  {project.infoUrl && (
+                    <a
+                      href={project.infoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-indigo-600 dark:bg-indigo-700 text-white rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600 transition-colors"
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                      <span className="text-sm font-medium">Info Link</span>
                     </a>
                   )}
                 </div>
@@ -258,6 +289,5 @@ export default function Projects() {
         )}
       </div>
     </section>
-  )
+  );
 }
-
