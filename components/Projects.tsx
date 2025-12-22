@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { ExternalLink, Github, Calendar, Award } from "lucide-react";
-import { projects } from "@/data/projects";
+import { projects, roles } from "@/data/projects";
 import { Project } from "@/types/project";
 
 export default function Projects() {
@@ -14,9 +14,6 @@ export default function Projects() {
   const allTechnologies = Array.from(
     new Set(projects.flatMap((project) => project.technologies))
   );
-
-  // Get unique roles for filtering
-  const roles = ["전체", "리더", "메인", "보조"];
 
   // Filter and sort projects based on selected filters (oldest first)
   const filteredProjects = projects

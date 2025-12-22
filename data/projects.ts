@@ -1,5 +1,7 @@
 import { Project } from "@/types/project";
 
+export const roles = ["전체", "리더", "메인", "보조"];
+
 export const projects: Project[] = [
   {
     id: 1,

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import ThemeToggle from './ThemeToggle'
+import { navItems } from '@/data/navigation'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -16,13 +17,6 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  const navItems = [
-    { name: '홈', href: '#hero' },
-    { name: '소개', href: '#about' },
-    { name: '프로젝트', href: '#projects' },
-    { name: '연락', href: '#contact' },
-  ]
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href)

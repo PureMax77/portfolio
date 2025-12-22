@@ -1,8 +1,20 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, Github, Send, MapPin, Phone, BookOpen } from 'lucide-react'
+import { Send, Phone, Mail, Github, BookOpen } from 'lucide-react'
 import { useState } from 'react'
+import { contactInfo, socialLinks, email } from '@/data/contact'
+
+const contactIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  Phone,
+  Mail,
+};
+
+const socialIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  Github,
+  BookOpen,
+  Mail,
+};
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -14,7 +26,7 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Here you would typically send the form data to your backend or email service
-    const mailtoLink = `mailto:ertr777@naver.com?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
       formData.subject
     )}&body=${encodeURIComponent(
       `이름: ${formData.name}\n\n${formData.message}`
@@ -30,48 +42,6 @@ export default function Contact() {
       [e.target.name]: e.target.value,
     })
   }
-
-  const contactInfo = [
-    {
-      icon: <Phone className="h-6 w-6" />,
-      label: 'Phone',
-      value: '010-6692-2351',
-      href: 'tel:010-6692-2351',
-    },
-    {
-      icon: <Mail className="h-6 w-6" />,
-      label: 'Email',
-      value: 'ertr777@naver.com',
-      href: 'mailto:ertr777@naver.com',
-    },
-    // {
-    //   icon: <BookOpen className="h-6 w-6" />,
-    //   label: 'Blog',
-    //   value: 'puremax77.tistory.com',
-    //   href: 'https://puremax77.tistory.com',
-    // },
-  ]
-
-  const socialLinks = [
-    {
-      icon: <Github className="h-6 w-6" />,
-      label: 'GitHub',
-      href: 'https://github.com/puremax77',
-      color: 'hover:bg-gray-800 dark:hover:bg-gray-700',
-    },
-    {
-      icon: <BookOpen className="h-6 w-6" />,
-      label: 'Blog',
-      href: 'https://puremax77.tistory.com',
-      color: 'hover:bg-orange-600',
-    },
-    // {
-    //   icon: <Mail className="h-6 w-6" />,
-    //   label: 'Email',
-    //   href: 'mailto:ertr777@naver.com',
-    //   color: 'hover:bg-red-600',
-    // },
-  ]
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -134,7 +104,11 @@ export default function Contact() {
                       className="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
                     >
                       <div className="p-3 bg-primary-600 text-white rounded-lg">
-                        {info.icon}
+                        {contactIconMap[info.iconName] &&
+                          (() => {
+                            const IconComponent = contactIconMap[info.iconName];
+                            return <IconComponent className="h-6 w-6" />;
+                          })()}
                       </div>
                       <div>
                         <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -148,7 +122,11 @@ export default function Contact() {
                   ) : (
                     <div className="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
                       <div className="p-3 bg-primary-600 text-white rounded-lg">
-                        {info.icon}
+                        {contactIconMap[info.iconName] &&
+                          (() => {
+                            const IconComponent = contactIconMap[info.iconName];
+                            return <IconComponent className="h-6 w-6" />;
+                          })()}
                       </div>
                       <div>
                         <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -179,7 +157,11 @@ export default function Contact() {
                     className={`p-4 bg-gray-900 dark:bg-gray-800 text-white rounded-lg transition-all ${social.color} transform hover:scale-110`}
                     aria-label={social.label}
                   >
-                    {social.icon}
+                    {socialIconMap[social.iconName] &&
+                      (() => {
+                        const IconComponent = socialIconMap[social.iconName];
+                        return <IconComponent className="h-6 w-6" />;
+                      })()}
                   </a>
                 ))}
               </div>

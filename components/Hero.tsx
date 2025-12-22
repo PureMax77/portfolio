@@ -1,19 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowDown, Download, Github, Mail, BookOpen, Phone } from 'lucide-react'
+import { ArrowDown, Download } from 'lucide-react'
+import { skills } from '@/data/hero'
 
 export default function Hero() {
-  const skills = [
-    'React',
-    'TypeScript',
-    'Next.js',
-    'Redux',
-    'Jotai',
-    'Web3.js',
-    'Tailwind CSS',
-    'Node.js',
-  ]
 
   const scrollToProjects = () => {
     const element = document.querySelector('#projects')
