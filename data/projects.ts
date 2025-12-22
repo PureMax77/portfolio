@@ -16,8 +16,9 @@ export const projects: Project[] = [
       "Prisma",
     ],
     role: "리더",
-    liveUrl: "https://deeeeptime.netlify.app",
-    liveComment: "서비스 종료로 인해 체험하기 기능만 확인 가능합니다.",
+    liveUrl: "https://deeeeptime.netlify.app/#/experience",
+    liveComment:
+      "서비스 종료로 인해 체험하기 기능만 확인 가능합니다.\n시간 기록은 분 단위로 기록됩니다.",
     achievement:
       "Full-Stack 개발: 학습시간 기록, 스케줄 관리, 그룹 스터디, 교재 관리 등",
   },
