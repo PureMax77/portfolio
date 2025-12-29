@@ -15,7 +15,7 @@ export default function Projects() {
     new Set(projects.flatMap((project) => project.technologies))
   );
 
-  // Filter and sort projects based on selected filters (oldest first)
+  // Filter and sort projects based on selected filters (newest first)
   const filteredProjects = projects
     .filter((project) => {
       const technologyMatch =
@@ -32,7 +32,7 @@ export default function Projects() {
         const [year, month] = startPeriod.split(".").map(Number);
         return year * 100 + month; // Convert to comparable number (e.g., 202002)
       };
-      return getStartDate(a.period) - getStartDate(b.period);
+      return getStartDate(b.period) - getStartDate(a.period);
     });
 
   const containerVariants = {
