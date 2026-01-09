@@ -64,12 +64,13 @@ export const achievements: Achievement[] = [
 
 export const education: Education[] = [
   {
-    school: "국민대학교 자동차공학과",
+    school: "국민대학교",
+    major: "자동차공학",
     period: "2010 - 2017",
   },
   {
     school: "국민대 자동차공학 전문대학원",
-    major: "친인간지능형자동차",
+    major: "친인간지능형자동차(Human-Machine Interaction)",
     period: "2017 - 2019",
   },
 ];

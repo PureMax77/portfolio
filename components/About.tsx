@@ -25,6 +25,24 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export default function About() {
+  // Sort education by period (newest first)
+  const sortedEducation = [...education].sort((a, b) => {
+    const getStartYear = (period: string) => {
+      const startYear = period.split(" - ")[0];
+      return parseInt(startYear);
+    };
+    return getStartYear(b.period) - getStartYear(a.period);
+  });
+
+  // Sort experience by period (newest first)
+  const sortedExperience = [...experience].sort((a, b) => {
+    const getStartDate = (period: string) => {
+      const startPeriod = period.split(" - ")[0];
+      const [year, month] = startPeriod.split(".").map(Number);
+      return year * 100 + month; // Convert to comparable number (e.g., 202202)
+    };
+    return getStartDate(b.period) - getStartDate(a.period);
+  });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -114,7 +132,7 @@ export default function About() {
             Education
           </h3>
           <div className="space-y-4">
-            {education.map((edu, index) => (
+            {sortedEducation.map((edu, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
@@ -148,7 +166,7 @@ export default function About() {
             Experience
           </h3>
           <div className="space-y-4">
-            {experience.map((exp, index) => (
+            {sortedExperience.map((exp, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
