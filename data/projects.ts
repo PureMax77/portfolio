@@ -43,7 +43,7 @@ export const projects: Project[] = [
     liveComment:
       "개발했던 서비스가 다른 회사로 이관되면서 일부 변경되었습니다.\n어떤 서비스인지 참고용으로만 봐주세요.",
     achievement:
-      "Swap(V2, V3) 메인 개발, Staking, Pool, Lending, Dashboard 서브 개발",
+      "Swap(V2, V3) 메인 개발, Staking, Pool, Lending, Dashboard 보조 개발",
     issues: [
       {
         issue:
