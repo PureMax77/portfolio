@@ -65,7 +65,7 @@ export default function About() {
             About Me
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            사용자 경험과 코드 품질을 최우선으로 생각하는 개발자입니다
+            블록체인 도메인 전문성과 협업 능력을 갖춘 개발자입니다
           </p>
         </motion.div>
 

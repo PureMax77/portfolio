@@ -46,19 +46,19 @@ export const achievements: Achievement[] = [
   {
     iconName: "Briefcase",
     title: "6년차 프론트엔드 개발자",
-    description: "에듀테크 스타트업에서 블록체인 회사까지 다양한 도메인 경험",
+    description: "스타트업 창업 멤버로 시작해 블록체인 도메인 전문성 보유",
   },
   {
     iconName: "Award",
-    title: "블록체인 & AI 전문성",
+    title: "커뮤니케이션 & 일정 관리",
     description:
-      "DeFi, Web Wallet, Explorer 등 블록체인 서비스 및 AI 프로젝트 개발",
+      "대학원 랩장, 스타트업 프로젝트 리드 경험을 통한 협업 및 일정 관리 강점",
   },
   {
     iconName: "Code2",
     title: "도메인 이해 기반 개발",
     description:
-      "서비스 도메인에 대한 깊은 이해를 바탕으로 완성도 높은 개발 추구",
+      "블록체인, AI 등 서비스 도메인에 대한 깊은 이해를 바탕으로 완성도 높은 개발 추구",
   },
 ];
 
