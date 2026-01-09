@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { ExternalLink, Github, Calendar, Award } from "lucide-react";
+import { ExternalLink, Github, Calendar, Award, AlertCircle, CheckCircle, FileText } from "lucide-react";
 import { projects, roles } from "@/data/projects";
 import { Project } from "@/types/project";
 
@@ -109,11 +109,10 @@ export default function Projects() {
                 <button
                   key={role}
                   onClick={() => setSelectedRole(role)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all ${
-                    selectedRole === role
-                      ? "bg-primary-600 text-white shadow-lg"
-                      : "bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600"
-                  }`}
+                  className={`px-4 py-2 rounded-lg font-medium transition-all ${selectedRole === role
+                    ? "bg-primary-600 text-white shadow-lg"
+                    : "bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    }`}
                 >
                   {role}
                 </button>
@@ -129,11 +128,10 @@ export default function Projects() {
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => setSelectedFilter("전체")}
-                className={`px-4 py-2 rounded-lg font-medium transition-all ${
-                  selectedFilter === "전체"
-                    ? "bg-primary-600 text-white shadow-lg"
-                    : "bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600"
-                }`}
+                className={`px-4 py-2 rounded-lg font-medium transition-all ${selectedFilter === "전체"
+                  ? "bg-primary-600 text-white shadow-lg"
+                  : "bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600"
+                  }`}
               >
                 전체
               </button>
@@ -141,11 +139,10 @@ export default function Projects() {
                 <button
                   key={tech}
                   onClick={() => setSelectedFilter(tech)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all ${
-                    selectedFilter === tech
-                      ? "bg-primary-600 text-white shadow-lg"
-                      : "bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600"
-                  }`}
+                  className={`px-4 py-2 rounded-lg font-medium transition-all ${selectedFilter === tech
+                    ? "bg-primary-600 text-white shadow-lg"
+                    : "bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    }`}
                 >
                   {tech}
                 </button>
@@ -201,6 +198,57 @@ export default function Projects() {
                     {project.achievement}
                   </p>
                 </div>
+
+                {/* Issues and Solutions */}
+                {project.issues && project.issues.length > 0 && (
+                  <div className="mb-4 space-y-3">
+                    {project.issues.map((issueItem, index) => (
+                      <div
+                        key={index}
+                        className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-100 dark:border-blue-800"
+                      >
+                        {/* Issue */}
+                        <div className="flex items-start gap-2 mb-3">
+                          <AlertCircle className="h-5 w-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
+                          <div className="flex-1">
+                            <h4 className="text-sm font-semibold text-blue-900 dark:text-blue-200 mb-1">
+                              주요 이슈
+                            </h4>
+                            <p className="text-sm text-blue-800 dark:text-blue-300">
+                              {issueItem.issue}
+                            </p>
+                          </div>
+                        </div>
+                        {/* Solution */}
+                        <div className="flex items-start gap-2 mb-3">
+                          <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+                          <div className="flex-1">
+                            <h4 className="text-sm font-semibold text-green-900 dark:text-green-200 mb-1">
+                              해결 방안
+                            </h4>
+                            <p className="text-sm text-green-800 dark:text-green-300">
+                              {issueItem.solution}
+                            </p>
+                          </div>
+                        </div>
+                        {/* Blog Link */}
+                        {issueItem.blogUrl && (
+                          <div className="flex justify-end">
+                            <a
+                              href={issueItem.blogUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-1.5 px-3 py-1.5 bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 rounded-md text-sm font-medium hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors border border-blue-200 dark:border-blue-700"
+                            >
+                              <FileText className="h-4 w-4" />
+                              <span>관련 내용 보기</span>
+                            </a>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
 
                 {/* Technologies */}
                 <div className="mb-4">

@@ -1,3 +1,9 @@
+export interface ProjectIssue {
+  issue: string;
+  solution: string;
+  blogUrl?: string;
+}
+
 export interface Project {
   id: number;
   title: string;
@@ -11,4 +17,5 @@ export interface Project {
   infoUrl?: string;
   achievement: string;
   image?: string;
+  issues?: ProjectIssue[];
 }

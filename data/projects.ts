@@ -44,6 +44,22 @@ export const projects: Project[] = [
       "개발했던 서비스가 다른 회사로 이관되면서 일부 변경되었습니다.\n어떤 서비스인지 참고용으로만 봐주세요.",
     achievement:
       "Swap(V2, V3) 메인 개발, Staking, Pool, Lending, Dashboard 서브 개발",
+    issues: [
+      {
+        issue:
+          "풀(Pool)의 실시간 변동성으로 인해 사용자가 안내받은 예상 수량과 실제 스왑(Swap) 완료 후 수령하는 토큰 수량이 달라지는 혼선 발생",
+        solution:
+          "트랜잭션 완료 후 Web3.js로 Receipt 내 Swap Event 로그를 조회 및 디코딩하여, 실제 블록체인상에서 체결된 정확한 수량을 추출해 사용자에게 제공하는 로직 구현",
+        blogUrl: "https://puremax77.tistory.com/10",
+      },
+      {
+        issue:
+          "차트, 리스트, 히스토리 등 다양한 데이터 조회 시 사용자가 필터나 탭을 빠르게 전환할 때, 이전 요청의 응답이 늦게 도착하여 현재 선택된 조건의 데이터를 덮어쓰는 화면 오류 발생",
+        solution:
+          "AbortController 기반 커스텀 훅을 구현하여 조건 변경 시 이전 API 요청을 즉시 중단(Abort)시키고 최신 요청만 반영되도록 처리. 차트 외에도 Dashboard, Portfolio, Tokens 등 주요 수치 데이터 조회 영역에 적용하여 데이터 정합성 확보",
+        blogUrl: "https://puremax77.tistory.com/36",
+      },
+    ],
   },
   {
     id: 3,
@@ -55,6 +71,22 @@ export const projects: Project[] = [
     role: "보조",
     infoUrl: "https://cplabs.io/web2x",
     achievement: "로그인, 회원가입, 세션 관리(NextAuth.js), Passkey 연동 개발",
+    issues: [
+      {
+        issue:
+          "투표, 토큰 전송 등 여러 화면에서 WebAuthn API 호출, ArrayBuffer 변환, Challenge 처리 등 복잡한 Passkey 인증 로직을 각 페이지마다 중복 구현하여 유지보수성 저하",
+        solution:
+          "커스텀 훅으로 Passkey 인증 로직을 모듈화하고, 여러 화면에서 재사용하여 코드 중복 제거",
+        // blogUrl: "https://blog.example.com/web2x-passkey-custom-hook",
+      },
+      {
+        issue:
+          "동시에 토큰 가격 정보를 요청할 때마다 외부(빗썸) API를 직접 호출하여 API Rate Limit 도달 및 서버 부하 발생. 클라이언트 캐싱 시 만료 후 동시다발적인 재요청으로 인한 서버 과부하 우려",
+        solution:
+          "node-cache를 활용한 서버 메모리 캐싱과 stale-while-revalidate 패턴 구현. 60초 TTL 설정으로 외부 API 호출을 99% 이상 감소시키고, 평균 응답 속도를 250ms에서 10ms 이하로 단축(약 95% 개선)하여 동시 접속자 증가 시에도 안정적인 서비스 제공",
+        blogUrl: "https://puremax77.tistory.com/22",
+      },
+    ],
   },
   {
     id: 4,
