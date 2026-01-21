@@ -94,7 +94,7 @@ export const experiences: Project[] = [
     period: "2024.04 - 2024.05",
     description:
       "WEMIX 테스트넷 전용 Web Wallet 서비스의 Front-end를 주도적으로 개발했습니다. Web3.js를 활용하여 지갑 생성, 잔고 조회, 토큰 전송, Faucet 등 블록체인 Wallet의 핵심 기능을 구현했습니다.",
-    technologies: ["Javascript", "React", "Redux", "SCSS", "Web3.js"],
+    technologies: ["Javascript", "React", "Redux", "SCSS", "Web3.js", "JSON-RPC"],
     role: "메인",
     liveUrl: "https://wallet.test.wemix.com/",
     achievement: "지갑 생성, 잔고 조회, 토큰 전송, Faucet 등 핵심 기능 구현",
@@ -113,6 +113,7 @@ export const experiences: Project[] = [
       "Web3.js",
       "Python",
       "MCP SDK",
+      "JSON-RPC",
     ],
     role: "보조",
     liveUrl: "https://explorer.metadium.com/",

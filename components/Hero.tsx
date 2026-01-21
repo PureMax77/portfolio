@@ -6,8 +6,8 @@ import { skills } from '@/data/hero'
 
 export default function Hero() {
 
-  const scrollToProjects = () => {
-    const element = document.querySelector('#projects')
+  const scrollToExperience = () => {
+    const element = document.querySelector('#experience')
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
@@ -38,7 +38,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 text-gray-900 dark:text-white"
           >
-            정상헌
+            정 상 헌
           </motion.h1>
 
           {/* Title */}
@@ -46,7 +46,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl md:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 mb-6"
+            className="text-xl md:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 mb-8"
           >
             Front-end Developer
           </motion.h2>
@@ -56,12 +56,15 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed"
+            className="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed text-left"
           >
-            React, TypeScript 기반의 6년차 웹 프론트엔드 개발자입니다.
+            React/TypeScript 기반 6년차 프론트엔드 개발자입니다.
             <br />
-            블록체인 및 AI 도메인의 다양한 서비스를 개발했으며,
-            도메인에 대한 깊은 이해를 바탕으로 완성도 높은 개발을 추구합니다.
+            <br />
+            초기 스타트업 창업 멤버로서 기획 단계부터 MVP 개발, 베타 서비스 런칭까지 제품의 초기 구축 과정(Zero to One)을 주도적으로 수행하며 넓은 시야를 길렀습니다.
+            <br />
+            <br />
+            이를 바탕으로 최근 블록체인 기업(씨피랩스)에서는 기획자·디자이너와 긴밀히 소통하며, 다소 생소하고 복잡할 수 있는 Web3 비즈니스 로직(DeFi, Wallet)을 사용자 친화적이고 안정적인 UI로 구현하는 데 주력했습니다.
           </motion.p>
 
           {/* Skills */}
@@ -92,7 +95,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
           >
             <button
-              onClick={scrollToProjects}
+              onClick={scrollToExperience}
               className="w-full sm:w-auto px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
             >
               경험 보기

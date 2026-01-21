@@ -39,7 +39,7 @@ export const skills: SkillCategory = {
   ],
   "Back-end": ["Node.js", "Apollo Server", "Prisma"],
   AI: ["Cursor", "Python", "MCP"],
-  etc: ["REST API", "GraphQL", "Github", "Bitbucket", "Docker"],
+  "Protocol & API": ["REST API", "GraphQL", "JSON-RPC"],
 };
 
 export const achievements: Achievement[] = [

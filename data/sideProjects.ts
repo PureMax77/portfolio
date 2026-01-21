@@ -3,7 +3,7 @@ import { Project } from "@/types/project";
 export const sideProjects: Project[] = [
   {
     id: 1,
-    title: "풀밭서리단 (Pulbat Seoridan)",
+    title: "풀팝서리단 (Pulbat Seoridan)",
     period: "2024.10 - 진행중",
     description:
       "농산물 실시간 시세 정보 및 특가 상품 제공 플랫폼입니다. 한국농수산식품유통공사(KAMIS) API를 활용하여 전국 주요 도시의 농산물 소매가격을 실시간으로 조회할 수 있으며, 가격 변동 추이를 시각적으로 확인할 수 있는 서비스입니다.",

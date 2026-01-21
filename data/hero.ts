@@ -6,5 +6,7 @@ export const skills: string[] = [
   "Jotai",
   "Web3.js",
   "Tailwind CSS",
+  "Shadcn",
   "Node.js",
+  "Python",
 ];

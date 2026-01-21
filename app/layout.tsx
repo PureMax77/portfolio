@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "정상헌 | Front-end Developer",
   description:
-    "React, TypeScript 기반의 6년차 웹 프론트엔드 개발자입니다. 블록체인 및 AI 도메인의 다양한 서비스를 개발했으며, 도메인에 대한 깊은 이해를 바탕으로 완성도 높은 개발을 추구합니다.",
+    "React/TypeScript 기반 6년차 프론트엔드 개발자입니다. 초기 스타트업 창업 멤버 경험과 블록체인(Web3), AI 도메인 전문성을 보유하고 있습니다.",
   keywords: [
     "정상헌",
     "Sanghun Jeong",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "정상헌 | Front-end Developer",
     description:
-      "React, TypeScript 기반의 6년차 웹 프론트엔드 개발자 포트폴리오",
+      "React/TypeScript 기반 6년차 프론트엔드 개발자입니다. 초기 스타트업 창업 멤버 경험과 블록체인(Web3), AI 도메인 전문성을 보유하고 있습니다.",
     type: "website",
     locale: "ko_KR",
     url: "https://puremax77.tistory.com",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "정상헌 | Front-end Developer",
     description:
-      "React, TypeScript 기반의 6년차 웹 프론트엔드 개발자 포트폴리오",
+      "React/TypeScript 기반 6년차 프론트엔드 개발자입니다. 초기 스타트업 창업 멤버 경험과 블록체인(Web3), AI 도메인 전문성을 보유하고 있습니다.",
   },
 };
 
