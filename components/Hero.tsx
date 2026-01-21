@@ -95,7 +95,7 @@ export default function Hero() {
               onClick={scrollToProjects}
               className="w-full sm:w-auto px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
             >
-              프로젝트 보기
+              경험 보기
               <ArrowDown className="h-5 w-5" />
             </button>
             <a

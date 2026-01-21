@@ -2,7 +2,7 @@ import { Project } from "@/types/project";
 
 export const roles = ["전체", "리더", "메인", "보조"];
 
-export const projects: Project[] = [
+export const experiences: Project[] = [
   {
     id: 1,
     title: "DeepTime - AI 기반 학습시간 관리",

@@ -3,20 +3,20 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { ExternalLink, Github, Calendar, Award, AlertCircle, CheckCircle, FileText } from "lucide-react";
-import { projects, roles } from "@/data/projects";
+import { experiences, roles } from "@/data/experience";
 import { Project } from "@/types/project";
 
-export default function Projects() {
+export default function Experience() {
   const [selectedFilter, setSelectedFilter] = useState<string>("전체");
   const [selectedRole, setSelectedRole] = useState<string>("전체");
 
   // Get unique technologies for filtering
   const allTechnologies = Array.from(
-    new Set(projects.flatMap((project) => project.technologies))
+    new Set(experiences.flatMap((project) => project.technologies))
   );
 
-  // Filter and sort projects based on selected filters (newest first)
-  const filteredProjects = projects
+  // Filter and sort experiences based on selected filters (newest first)
+  const filteredProjects = experiences
     .filter((project) => {
       const technologyMatch =
         selectedFilter === "전체" ||
@@ -71,7 +71,7 @@ export default function Projects() {
 
   return (
     <section
-      id="projects"
+      id="experience"
       className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800"
     >
       <div className="container mx-auto max-w-7xl">
@@ -84,10 +84,10 @@ export default function Projects() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
-            Projects
+            Experience
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            다양한 프로젝트를 통해 쌓은 경험과 기술력을 확인하세요
+            다양한 경험을 통해 쌓은 기술력과 노하우를 확인하세요
           </p>
         </motion.div>
 
@@ -151,7 +151,7 @@ export default function Projects() {
           </div>
         </motion.div>
 
-        {/* Projects Grid */}
+        {/* Experience Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -328,7 +328,7 @@ export default function Projects() {
             className="text-center py-12"
           >
             <p className="text-gray-500 dark:text-gray-400 text-lg">
-              해당 필터에 맞는 프로젝트가 없습니다.
+              해당 필터에 맞는 경험이 없습니다.
             </p>
           </motion.div>
         )}
